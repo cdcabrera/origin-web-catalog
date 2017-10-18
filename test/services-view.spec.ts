@@ -407,7 +407,7 @@ describe('servicesView', () => {
     expect(jQuery(element).find('pf-empty-state').length).toBe(1);
   });
 
-  it("should clear filters when pfEmptyState link is clicked", () => {
+  it("should clear filters when pfEmptyState link is clicked", (done) => {
     createServiceView();
 
     var element = componentTest.rawElement;
@@ -440,7 +440,11 @@ describe('servicesView', () => {
     //console.log(jself.find('.active-filter.label.label-info'),
     //        jself.find('.active-filter.label.label-info').html());
 
+    //test A-4, A-5
     expect(jself.find('.active-filter.label.label-info').html()).toBeUndefined();
+    done();
+    //test A-6
+    //expect(jself[0].querySelector('.active-filter.label.label-info')).toEqual(null);
     //console.log(jself[0].querySelector('.active-filter.label.label-info'));
     //console.log(jself.find('woot'));
 
