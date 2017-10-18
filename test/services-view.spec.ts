@@ -441,6 +441,8 @@ describe('servicesView', () => {
     //        jself.find('.active-filter.label.label-info').html());
 
     expect(jself.find('.active-filter.label.label-info').html()).toBeUndefined();
+    //console.log(jself[0].querySelector('.active-filter.label.label-info'));
+    //console.log(jself.find('woot'));
 
     //expect(jself.find('.active-filter.label.label-info').length).toBe(0);
   });
