@@ -444,8 +444,17 @@ describe('servicesView', () => {
     //expect(jself.find('.active-filter.label.label-info').html()).toBeUndefined();
     //done();
     //test A-6
-    expect(jself[0].querySelector('.active-filter.label.label-info')).toEqual(null);
-    done();
+    //expect(jself[0].querySelector('.active-filter.label.label-info')).toEqual(null);
+    //done();
+    //test A-7
+    setTimeout(function(){
+
+        expect(jself.find('.active-filter.label.label-info').html()).toBeUndefined();
+        //expect(jself[0].querySelector('.active-filter.label.label-info')).toEqual(null);
+        done();
+
+    }, 2000);
+
     //console.log(jself[0].querySelector('.active-filter.label.label-info'));
     //console.log(jself.find('woot'));
 
