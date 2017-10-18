@@ -441,10 +441,10 @@ describe('servicesView', () => {
     //        jself.find('.active-filter.label.label-info').html());
 
     //test A-4, A-5
-    expect(jself.find('.active-filter.label.label-info').html()).toBeUndefined();
-    done();
+    //expect(jself.find('.active-filter.label.label-info').html()).toBeUndefined();
+    //done();
     //test A-6
-    //expect(jself[0].querySelector('.active-filter.label.label-info')).toEqual(null);
+    expect(jself[0].querySelector('.active-filter.label.label-info')).toEqual(null);
     //console.log(jself[0].querySelector('.active-filter.label.label-info'));
     //console.log(jself.find('woot'));
 
