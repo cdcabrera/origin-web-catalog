@@ -424,6 +424,8 @@ describe('servicesView', () => {
     enterFilterKeyword(keyWordInput, "nomatches");
     expect(jQuery(element).find('pf-empty-state').length).toBe(1);
 
+    componentTest.scope.$digest();
+
     //Click clear filter link
     var filterLink = jQuery(element).find('pf-empty-state');
     filterLink.find('.blank-state-pf-helpLink').click();
