@@ -411,26 +411,32 @@ describe('servicesView', () => {
     createServiceView();
 
     var element = componentTest.rawElement;
+    var jself = jQuery(element);
 
     //Get Filter Dropdown
-    var filterDropdown = jQuery(element).find('span[uib-dropdown]');
+    var filterDropdown = jself.find('span[uib-dropdown]');
 
     //Open Filter Panel
     filterDropdown.find('button').click();
+    componentTest.scope.$digest();
+
+    expect(jself.find('pf-empty-state').length).toEqual(0);
+
     var keyWordInput = filterDropdown.find('.keyword-filter');
-    expect(jQuery(element).find('pf-empty-state').length).toEqual(0);
 
     //pfEmptyState component with 'nomatches' keyword
     enterFilterKeyword(keyWordInput, "nomatches");
-    expect(jQuery(element).find('pf-empty-state').length).toBe(1);
+    expect(jself.find('pf-empty-state').length).toBe(1);
 
-    componentTest.scope.$digest();
+    //componentTest.scope.$digest();
 
     //Click clear filter link
-    var filterLink = jQuery(element).find('pf-empty-state');
+    var filterLink = jself.find('pf-empty-state');
+
     filterLink.find('.blank-state-pf-helpLink').click();
     componentTest.scope.$digest();
-    expect(jQuery(element).find('.active-filter.label.label-info').length).toBe(0);
+
+    expect(jself.find('.active-filter.label.label-info').length).toBe(0);
   });
 
   it("should display publisher synonyms", () => {
