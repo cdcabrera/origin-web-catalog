@@ -411,7 +411,10 @@ describe('servicesView', () => {
     createServiceView();
 
     var element = componentTest.rawElement;
+    //var ctrl = componentTest.isoScope.$ctrl;
     var jself = jQuery(element);
+
+    //spyOn(ctrl, 'clearAppliedFilters');
 
     //Get Filter Dropdown
     var filterDropdown = jself.find('span[uib-dropdown]');
@@ -431,10 +434,18 @@ describe('servicesView', () => {
     //componentTest.scope.$digest();
 
     //Click clear filter link
-    var filterLink = jself.find('pf-empty-state');
+    //var filterLink = jself.find('pf-empty-state');
+    //A-9
+    //console.log(jself.find('pf-empty-state'));
 
-    filterLink.find('.blank-state-pf-helpLink')[0].click();
-    componentTest.scope.$digest();
+    componentTest.eventFire(jself.find('pf-empty-state .blank-state-pf-helpLink')[0], 'click');
+
+    expect(jself.find('.active-filter.label.label-info').html()).toBeUndefined();
+
+    //A-8
+    //filterLink.find('.blank-state-pf-helpLink')[0].click();
+    //filterLink.find('.blank-state-pf-helpLink').click();
+    //componentTest.scope.$digest();
 
     //console.log(filterLink.find('.blank-state-pf-helpLink'));
 
@@ -443,7 +454,7 @@ describe('servicesView', () => {
     //        jself.find('.active-filter.label.label-info').html());
 
     //test A-4, A-5
-    expect(jself.find('.active-filter.label.label-info').html()).toBeUndefined();
+    //expect(jself.find('.active-filter.label.label-info').html()).toBeUndefined();
     //done();
     //test A-6
     //expect(jself[0].querySelector('.active-filter.label.label-info')).toEqual(null);
@@ -456,8 +467,8 @@ describe('servicesView', () => {
         done();
 
     }, 2000);*/
-    //test A-8
-
+    //test A-9
+    //expect(ctrl.clearAppliedFilters).toHaveBeenCalled();
     done();
 
     //console.log(jself[0].querySelector('.active-filter.label.label-info'));
