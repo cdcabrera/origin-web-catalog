@@ -63,6 +63,16 @@ export class ServicesViewController implements angular.IController {
       resultsLabel: "Items",
       appliedFilters: []
     };
+
+    this.ctrl.emptyFilterConfig = {
+      icon: 'pficon-info',
+      title: 'No results match.',
+      info: 'The active filters are hiding all catalog items.',
+      helpLink: {
+        urlLabel: 'Clear Filters',
+        urlAction: this.clearAppliedFilters
+      }
+    };
   }
 
   public $onChanges(onChangesObj: angular.IOnChangesObject) {
@@ -211,9 +221,9 @@ export class ServicesViewController implements angular.IController {
     this.ctrl.keywordFilterValue = null;  //reset flag
   };
 
-  private clearAppliedFilters() {
+  private clearAppliedFilters = () => {
     this.$scope.$broadcast('clear-filters');
-  }
+  };
 
   private  getScrollParent(node: any) {
     if (node === null || !(node instanceof Element)) {
