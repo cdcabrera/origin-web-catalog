@@ -437,8 +437,9 @@ describe('servicesView', () => {
     //var filterLink = jself.find('pf-empty-state');
     //A-9
     //console.log(jself.find('pf-empty-state'));
-
+    //A-10
     componentTest.eventFire(jself.find('pf-empty-state .blank-state-pf-helpLink')[0], 'click');
+    componentTest.scope.$digest();
 
     expect(jself.find('.active-filter.label.label-info').html()).toBeUndefined();
 
