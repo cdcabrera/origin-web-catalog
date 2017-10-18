@@ -436,7 +436,13 @@ describe('servicesView', () => {
     filterLink.find('.blank-state-pf-helpLink').click();
     componentTest.scope.$digest();
 
-    expect(jself.find('.active-filter.label.label-info').length).toBe(0);
+    //console.log(4, jself.html());
+    //console.log(jself.find('.active-filter.label.label-info'),
+    //        jself.find('.active-filter.label.label-info').html());
+
+    expect(jself.find('.active-filter.label.label-info').html()).toBeUndefined();
+
+    //expect(jself.find('.active-filter.label.label-info').length).toBe(0);
   });
 
   it("should display publisher synonyms", () => {
