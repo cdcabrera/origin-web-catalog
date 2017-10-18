@@ -445,6 +445,7 @@ describe('servicesView', () => {
     //done();
     //test A-6
     expect(jself[0].querySelector('.active-filter.label.label-info')).toEqual(null);
+    done();
     //console.log(jself[0].querySelector('.active-filter.label.label-info'));
     //console.log(jself.find('woot'));
 
