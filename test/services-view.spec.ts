@@ -433,27 +433,32 @@ describe('servicesView', () => {
     //Click clear filter link
     var filterLink = jself.find('pf-empty-state');
 
-    filterLink.find('.blank-state-pf-helpLink').click();
+    filterLink.find('.blank-state-pf-helpLink')[0].click();
     componentTest.scope.$digest();
+
+    //console.log(filterLink.find('.blank-state-pf-helpLink'));
 
     //console.log(4, jself.html());
     //console.log(jself.find('.active-filter.label.label-info'),
     //        jself.find('.active-filter.label.label-info').html());
 
     //test A-4, A-5
-    //expect(jself.find('.active-filter.label.label-info').html()).toBeUndefined();
+    expect(jself.find('.active-filter.label.label-info').html()).toBeUndefined();
     //done();
     //test A-6
     //expect(jself[0].querySelector('.active-filter.label.label-info')).toEqual(null);
     //done();
     //test A-7
-    setTimeout(function(){
+    /*setTimeout(function(){
 
         expect(jself.find('.active-filter.label.label-info').html()).toBeUndefined();
         //expect(jself[0].querySelector('.active-filter.label.label-info')).toEqual(null);
         done();
 
-    }, 2000);
+    }, 2000);*/
+    //test A-8
+
+    done();
 
     //console.log(jself[0].querySelector('.active-filter.label.label-info'));
     //console.log(jself.find('woot'));
